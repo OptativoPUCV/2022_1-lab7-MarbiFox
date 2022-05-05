@@ -437,3 +437,9 @@ heap.c:20:6: note: expected ‘heapElem {aka struct nodo}’ but argument is of 
       ^~~~
 Compilation failed
 3618df8
+Thu May  5 15:55:53 UTC 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  3|2
+total_score: 25/70
+3189ad0

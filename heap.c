@@ -82,7 +82,7 @@ void heap_push(Heap* pq, void* data, int priority){
 
 void heap_pop(Heap* pq){
    //Cambiar el nodo raíz por el nodo final.
-   swap(&(pq->heapArray[0]), &(pq->heapArray[pq->size-1]));
+   swap(pq->heapArray[0], pq->heapArray[pq->size-1]);
    //Eliminar el nodo raíz.
    pq->heapArray[pq->size-1].priority = 0;
    pq->heapArray[pq->size-1].data = NULL;
