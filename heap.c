@@ -18,7 +18,9 @@ typedef struct Heap{
 
 
 void swap(heapElem * parent, heapElem * node) {
-   heapElem aux = *node;
+   heapElem aux;
+   aux.data = *(node.data);
+   aux.priority = *(node.priority);
    *node = *parent;
    *parent = aux;
 }

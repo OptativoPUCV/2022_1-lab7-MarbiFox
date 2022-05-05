@@ -347,3 +347,18 @@ Thu May  5 15:33:49 UTC 2022:
  tests:  4|2
 total_score: 30/70
 f9abcf9
+Thu May  5 15:35:17 UTC 2022: 
+ heap.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+heap.c: In function ‘swap’:
+heap.c:22:21: error: ‘node’ is a pointer; did you mean to use ‘->’?
+    aux.data = *(node.data);
+                     ^
+                     ->
+heap.c:23:25: error: ‘node’ is a pointer; did you mean to use ‘->’?
+    aux.priority = *(node.priority);
+                         ^
+                         ->
+Compilation failed
+62ac51b
