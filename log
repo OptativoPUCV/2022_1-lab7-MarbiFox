@@ -151,3 +151,9 @@ test.c:(.text+0xb94): undefined reference to `heap_pop'
 collect2: error: ld returned 1 exit status
 Compilation failed
 f94ba0b
+Thu May  5 01:53:02 UTC 2022: 
+ heap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+ tests:  3|3
+total_score: 20/70
+3bece92
