@@ -86,4 +86,7 @@ void heap_pop(Heap* pq){
    //Eliminar el nodo raíz.
    pq->heapArray[pq->size-1].priority = 0;
    pq->heapArray[pq->size-1].data = NULL;
+   //Intercambiar nodos.
+   //int i = 0;
+   //if (pq->heapArray[0].priority > pq->heapArray[])
 }
