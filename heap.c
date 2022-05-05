@@ -41,7 +41,6 @@ Heap* createHeap(){
 }
 
 void* heap_top(Heap* pq){
-  return NULL;
    if (pq->heapArray[0].data != NULL) {
       return pq->heapArray[0].data;
    }
