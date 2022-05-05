@@ -28,12 +28,8 @@ void swap(heapElem * parent, heapElem * node) {
 }
 
 void enlarge(Heap * heap){
-   //heapElem * aux = heap->heapArray;
    heap->capac = heap->capac * 2 + 1;
    heap->heapArray = (heapElem *) realloc (heap->heapArray, (sizeof(heapElem) * heap->capac));
-   /*for (int i = 0; i < heap->size; i++) {
-      heap->heapArray[i] = aux[i];
-   }*/
 }
 
 Heap* createHeap(){
@@ -89,6 +85,7 @@ void heap_pop(Heap* pq){
    //Eliminar el nodo raíz.
    pq->heapArray[pq->size-1].priority = 0;
    pq->heapArray[pq->size-1].data = NULL;
+   pq->size--;
    //Intercambiar nodos.
    //int i = 0;
    //if (pq->heapArray[0].priority > pq->heapArray[])
