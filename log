@@ -406,3 +406,9 @@ heap.c:87:39: error: assignment makes integer from pointer without a cast [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 aacf325
+Thu May  5 15:46:04 UTC 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|2
+total_score: 30/70
+00a6b8e
