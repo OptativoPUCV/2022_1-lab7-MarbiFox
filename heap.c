@@ -63,7 +63,7 @@ void heap_push(Heap* pq, void* data, int priority){
    
    //Reordenar si es necesario.
    int parent = (i-1)/2;
-   while (parent > 0){
+   while (parent >= 0){
       //Comparar prioridad del nodo con el de su "Padre".
       printf("\n%d son\n", pq->heapArray[i].priority);
       printf("\n%d parent\n------------", pq->heapArray[parent].priority);
@@ -76,9 +76,10 @@ void heap_push(Heap* pq, void* data, int priority){
      
       printf("\n%d son\n", pq->heapArray[i].priority);
       printf("\n%d parent\n", pq->heapArray[parent].priority);
-      i = parent;
+      
       parent = (parent-1)/2;
-     }
+    }
+  return;
 }
 
 void heap_pop(Heap* pq){
