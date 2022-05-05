@@ -95,12 +95,12 @@ void heap_pop(Heap* pq){
          i = 2*i+2;
          continue;
       }
-      //Comparar Hijo Izquierdo. (Menor)
+      /*Comparar Hijo Izquierdo. (Menor)
       if (pq->heapArray[i].priority < pq->heapArray[2*i+1].priority) {
          swap(&(pq->heapArray[i]), &(pq->heapArray[2*i+1]));
          i = 2*i+1;
          continue;
-      }
+      }*/
       break;
    }
 }
