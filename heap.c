@@ -18,10 +18,9 @@ typedef struct Heap{
 
 
 void swap(heapElem * parent, heapElem * node) {
-   heapElem * aux = (heapElem *) malloc (sizeof(heapElem));
-   aux = node;
-   node = parent;
-   parent = aux;
+   heapElem aux = *node;
+   *node = *parent;
+   *parent = aux;
 }
 
 void enlarge(Heap * heap){
@@ -41,6 +40,7 @@ Heap* createHeap(){
 }
 
 void* heap_top(Heap* pq){
+  return pq->heapArray[0].data;
    if (pq->heapArray[0].data == NULL) {
       return NULL;
    }
