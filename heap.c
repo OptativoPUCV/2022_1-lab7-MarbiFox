@@ -26,7 +26,7 @@ void swap(heapElem * parent, heapElem * node) {
 
 void enlarge(Heap * heap){
    heapElem * aux = heap->heapArray;
-   heap->heapArray = (heapElem *) realloc (heap->heapArray, heap->capac * 2);
+   heap->heapArray = (heapElem *) malloc ((heap->capac * 2) * sizeof(heapElem));
    for (int i = 0; i < heap->size; i++) {
       heap->heapArray[i] = aux[i];
    }
@@ -41,6 +41,7 @@ Heap* createHeap(){
 }
 
 void* heap_top(Heap* pq){
+  
     return NULL;
 }
 
