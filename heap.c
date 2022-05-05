@@ -40,7 +40,7 @@ void* heap_top(Heap* pq){
 
 void heap_push(Heap* pq, void* data, int priority){
    //Insertar al final del árbol/arreglo.
-   if (pq->heapArray[pq->size].priority == NULL){
+   if (pq->heapArray[pq->size] == NULL){
       //enlarge(pq->heapArray);
    }
    pq->heapArray[pq->size].priority = priority;
