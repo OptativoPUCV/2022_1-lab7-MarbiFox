@@ -139,3 +139,15 @@ Thu May  5 01:52:08 UTC 2022:
  tests:  3|3
 total_score: 20/70
 ec39713
+Thu May  5 01:52:45 UTC 2022: 
+ heap.c | 7 -------
+ 1 file changed, 7 deletions(-)
+/tmp/ccD5NSu8.o: In function `test_pop':
+test.c:(.text+0xa51): undefined reference to `heap_pop'
+test.c:(.text+0xabc): undefined reference to `heap_pop'
+test.c:(.text+0xb05): undefined reference to `heap_pop'
+test.c:(.text+0xb4e): undefined reference to `heap_pop'
+test.c:(.text+0xb94): undefined reference to `heap_pop'
+collect2: error: ld returned 1 exit status
+Compilation failed
+f94ba0b
