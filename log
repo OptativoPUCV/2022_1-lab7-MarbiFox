@@ -362,3 +362,9 @@ heap.c:23:25: error: ‘node’ is a pointer; did you mean to use ‘->’?
                          ->
 Compilation failed
 62ac51b
+Thu May  5 15:35:39 UTC 2022: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  4|2
+total_score: 30/70
+83742e6
