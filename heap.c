@@ -40,7 +40,7 @@ Heap* createHeap(){
 }
 
 void* heap_top(Heap* pq){
-   return NULL;
+   return pq->heapArray[0].data;
 }
 
 void heap_push(Heap* pq, void* data, int priority){
