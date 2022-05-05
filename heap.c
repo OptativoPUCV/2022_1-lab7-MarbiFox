@@ -21,8 +21,10 @@ void swap(heapElem * parent, heapElem * node) {
    heapElem aux;
    aux.data = node->data;
    aux.priority = node->priority;
-   *node = *parent;
-   *parent = aux;
+   node->data = parent->data;
+   node->priority = parent->priority;
+   parent->data = aux.data;
+   parent->priority = aux.priority;
 }
 
 void enlarge(Heap * heap){
@@ -63,7 +65,9 @@ void heap_push(Heap* pq, void* data, int priority){
       //Comparar prioridad del nodo con el de su "Padre".
       printf("\n%d son\n", pq->heapArray[i].priority);
       printf("\n%d parent\n------------", pq->heapArray[parent].priority);
-      if (pq->heapArray[parent].priority > pq->heapArray[i].priority) break;
+      if (pq->heapArray[parent].priority > pq->heapArray[i].priority) {
+        break;
+      }
       swap(&(pq->heapArray[parent]), &(pq->heapArray[i]));
       printf("\n%d son\n", pq->heapArray[i].priority);
       printf("\n%d parent\n", pq->heapArray[parent].priority);
