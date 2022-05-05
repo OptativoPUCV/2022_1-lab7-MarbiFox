@@ -67,3 +67,17 @@ Thu May  5 01:32:52 UTC 2022:
  tests:  2|3
 total_score: 15/70
 aa35a70
+Thu May  5 01:33:18 UTC 2022: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+heap.c: In function ‘heap_push’:
+heap.c:60:26: error: expected ‘,’ or ‘;’ before ‘)’ token
+    int parent = (aux-1)/2);
+                          ^
+heap.c:65:28: error: expected ‘;’ before ‘)’ token
+       parent = (parent-1)/2);
+                            ^
+heap.c:65:28: error: expected statement before ‘)’ token
+Compilation failed
+061e0cf
