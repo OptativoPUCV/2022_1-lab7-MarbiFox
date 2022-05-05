@@ -81,3 +81,9 @@ heap.c:65:28: error: expected ‘;’ before ‘)’ token
 heap.c:65:28: error: expected statement before ‘)’ token
 Compilation failed
 061e0cf
+Thu May  5 01:33:25 UTC 2022: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  2|3
+total_score: 15/70
+4caefe5
