@@ -40,7 +40,7 @@ Heap* createHeap(){
 }
 
 void* heap_top(Heap* pq){
-   if (pq->heapArray[0].data == NULL) {
+   if (pq->heapArray[0]) {
       return NULL;
    }
    return pq->heapArray[0].data;
@@ -61,7 +61,7 @@ void heap_push(Heap* pq, void* data, int priority){
    int parent = (i-1)/2;
    while (parent >= 0){
       //Comparar prioridad del nodo con el de su "Padre".
-      if (pq->heapArray[parent].priority > pq->heapArray[i].priority) break;
+      if (pq->heapArray[parent].priority > pq->heapArray[aux].priority) break;
       swap(&(pq->heapArray[parent]), &(pq->heapArray[aux]));
       aux = parent;
       parent = (parent-1)/2;
