@@ -17,14 +17,14 @@ typedef struct Heap{
 } Heap;
 
 
-void swap(heapElem parent, heapElem node) {
+void swap(heapElem * parent, heapElem * node) {
    heapElem aux;
-   aux.data = node.data;
-   aux.priority = node.priority;
-   node.data = parent.data;
-   node.priority = parent.priority;
-   parent.data = aux.data;
-   parent.priority = aux.priority;
+   aux.data = node->data;
+   aux.priority = node->priority;
+   node->data = parent->data;
+   node->priority = parent->priority;
+   parent->data = aux.data;
+   parent->priority = aux.priority;
 }
 
 void enlarge(Heap * heap){
@@ -54,14 +54,16 @@ void heap_push(Heap* pq, void* data, int priority){
    //Insertar al final del árbol/arreglo.
    int i = pq->size;
    if (pq->heapArray[i].data == NULL){
-      //enlarge(pq);
+      enlarge(pq);
    }
    pq->heapArray[i].priority = priority;
    pq->heapArray[i].data = data;
+   pq->size++;
+   if (pq->size == 0) return;
    
    //Reordenar si es necesario.
    int parent = (i-1)/2;
-   while (parent >= 0){
+   while (parent > 0){
       //Comparar prioridad del nodo con el de su "Padre".
       printf("\n%d son\n", pq->heapArray[i].priority);
       printf("\n%d parent\n------------", pq->heapArray[parent].priority);
@@ -69,20 +71,19 @@ void heap_push(Heap* pq, void* data, int priority){
       if (pq->heapArray[parent].priority > pq->heapArray[i].priority) {
         break;
       }
-      
-      swap(pq->heapArray[parent], pq->heapArray[i]);
+
+      swap(&(pq->heapArray[parent]), &(pq->heapArray[i]));
      
       printf("\n%d son\n", pq->heapArray[i].priority);
       printf("\n%d parent\n", pq->heapArray[parent].priority);
       i = parent;
       parent = (parent-1)/2;
-   }
-   pq->size++;
+     }
 }
 
 void heap_pop(Heap* pq){
    //Cambiar el nodo raíz por el nodo final.
-   swap(pq->heapArray[0], pq->heapArray[pq->size-1]);
+   swap(&(pq->heapArray[0]), &(pq->heapArray[pq->size-1]));
    //Eliminar el nodo raíz.
    pq->heapArray[pq->size-1].priority = 0;
    pq->heapArray[pq->size-1].data = NULL;
