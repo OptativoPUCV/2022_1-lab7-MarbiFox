@@ -395,3 +395,14 @@ In file included from test.c:2:0:
 cc1: all warnings being treated as errors
 Compilation failed
 37372b3
+Thu May  5 15:45:49 UTC 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+heap.c: In function ‘heap_pop’:
+heap.c:87:39: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+    pq->heapArray[pq->size-1].priority = NULL;
+                                       ^
+cc1: all warnings being treated as errors
+Compilation failed
+aacf325
