@@ -60,13 +60,11 @@ void heap_push(Heap* pq, void* data, int priority){
    //Reordenar si es necesario.
    int aux = i;
    int parent = (aux-1)/2;
-   while (parent >= 0){
+   while (parent >= 0 && pq->heapArray[parent].priority > pq->heapArray[aux].priority){
       //Comparar prioridad del nodo con el de su "Padre".
-      if (pq->heapArray[parent].priority > pq->heapArray[aux].priority) break;
       swap(&(pq->heapArray[parent]), &(pq->heapArray[aux]));
       parent = (parent-1)/2;
    }
-   
 }
 
 void heap_pop(Heap* pq){
