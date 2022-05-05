@@ -74,8 +74,8 @@ void heap_push(Heap* pq, void* data, int priority){
 
       swap(&(pq->heapArray[parent]), &(pq->heapArray[i]));
      
-      printf("\n%d son\n", pq->heapArray[i].priority);
-      printf("\n%d parent\n", pq->heapArray[parent].priority);
+      //printf("\n%d son\n", pq->heapArray[i].priority);
+      //printf("\n%d parent\n", pq->heapArray[parent].priority);
       i = (i-1)/2;
       parent = (parent-1)/2;
     }
