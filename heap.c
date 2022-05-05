@@ -48,8 +48,7 @@ void* heap_top(Heap* pq){
 
 void heap_push(Heap* pq, void* data, int priority){
    //Insertar al final del árbol/arreglo.
-   pq->size++;
-   int i = pq->size - 1;
+   int i = pq->size;
    if (pq->heapArray[i].data == NULL){
       enlarge(pq);
    }
@@ -68,7 +67,7 @@ void heap_push(Heap* pq, void* data, int priority){
       printf("\n%d parent\n", pq->heapArray[parent].priority);
       parent = (parent-1)/2;
    }
-  
+   pq->size++;
 }
 
 void heap_pop(Heap* pq){
