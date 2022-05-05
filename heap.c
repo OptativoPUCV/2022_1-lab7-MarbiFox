@@ -87,6 +87,20 @@ void heap_pop(Heap* pq){
    pq->heapArray[pq->size-1].data = NULL;
    pq->size--;
    //Intercambiar nodos.
-   //int i = 0;
-   //if (pq->heapArray[0].priority > pq->heapArray[])
+   int i = 0;
+   while (i < pq->size) {
+      //Comparar Hijo Derecho. (Mayor)
+      if (pq->heapArray[i].priority < pq->heapArray[2*i+2].priority) {
+         swap(&(pq->heapArray[i]), &(pq->heapArray[2*i+2]));
+         i = 2*i+2;
+         continue;
+      }
+      //Comparar Hijo Izquierdo. (Menor)
+      if (pq->heapArray[i].priority < pq->heapArray[2*i+1].priority) {
+         swap(&(pq->heapArray[i]), &(pq->heapArray[2*i+1]));
+         i = 2*i+1;
+         continue;
+      }
+      break;
+   }
 }
