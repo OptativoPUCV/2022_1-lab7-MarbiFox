@@ -227,3 +227,9 @@ heap.c:43:8: error: used struct type value where scalar is required
         ^~
 Compilation failed
 d0cca07
+Thu May  5 15:12:28 UTC 2022: 
+ heap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  3|3
+total_score: 20/70
+36764e6

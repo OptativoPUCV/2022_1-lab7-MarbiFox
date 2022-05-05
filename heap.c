@@ -33,14 +33,14 @@ void enlarge(Heap * heap){
 
 Heap* createHeap(){
    Heap * new = (Heap *) malloc (sizeof(Heap));
-   new->heapArray = (heapElem *) malloc (3 * sizeof(heapElem));
+   new->heapArray = (heapElem *) calloc (3, sizeof(heapElem));
    new->size = 0;
    new->capac = 3;
    return new;
 }
 
 void* heap_top(Heap* pq){
-   if (pq->heapArray[0]) {
+   if (pq->heapArray[0].data == NULL) {
       return NULL;
    }
    return pq->heapArray[0].data;
@@ -63,7 +63,7 @@ void heap_push(Heap* pq, void* data, int priority){
       //Comparar prioridad del nodo con el de su "Padre".
       if (pq->heapArray[parent].priority > pq->heapArray[aux].priority) break;
       swap(&(pq->heapArray[parent]), &(pq->heapArray[aux]));
-      aux = parent;
+      //aux = parent;
       parent = (parent-1)/2;
    }
 }
