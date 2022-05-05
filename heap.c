@@ -47,28 +47,7 @@ void* heap_top(Heap* pq){
 }
 
 void heap_push(Heap* pq, void* data, int priority){
-   //Insertar al final del árbol/arreglo.
-   int i = pq->size;
-   if (pq->heapArray[i].data == NULL){
-      //enlarge(pq);
-   }
-   pq->heapArray[i].priority = priority;
-   pq->heapArray[i].data = data;
-   
-   //Reordenar si es necesario.
-   int parent = (i-1)/2;
-   while (parent >= 0){
-      //Comparar prioridad del nodo con el de su "Padre".
-      printf("\n%d son\n", pq->heapArray[i].priority);
-      printf("\n%d parent\n------------", pq->heapArray[parent].priority);
-      if (pq->heapArray[parent].priority > pq->heapArray[i].priority) break;
-      swap(&(pq->heapArray[parent]), &(pq->heapArray[i]));
-      printf("\n%d son\n", pq->heapArray[i].priority);
-      printf("\n%d parent\n", pq->heapArray[parent].priority);
-      parent = (parent-1)/2;
-   }
-   pq->size++;
-}
+
 
 void heap_pop(Heap* pq){
 
