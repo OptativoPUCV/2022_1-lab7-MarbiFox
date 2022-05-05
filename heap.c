@@ -29,7 +29,8 @@ void swap(heapElem * parent, heapElem * node) {
 
 void enlarge(Heap * heap){
    heapElem * aux = heap->heapArray;
-   heap->heapArray = (heapElem *) malloc ((heap->capac * 2 + 1) * sizeof(heapElem));
+   heap->capac = heap->capac * 2 + 1;
+   heap->heapArray = (heapElem *) realloc (heap->heapArray, (sizeof(heapElem) * heap->capac));
    for (int i = 0; i < heap->size; i++) {
       heap->heapArray[i] = aux[i];
    }
