@@ -1,0 +1,11 @@
+Thu May  5 01:10:34 UTC 2022: 
+ heap.c | 34 +++++++++++++++++++++++++++++++---
+ 1 file changed, 31 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+heap.c: In function ‘heap_push’:
+heap.c:43:41: error: comparison between pointer and integer [-Werror]
+    if (pq->heapArray[pq->size].priority == NULL){
+                                         ^~
+cc1: all warnings being treated as errors
+Compilation failed
+bb76feb
