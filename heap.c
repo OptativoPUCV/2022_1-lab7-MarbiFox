@@ -49,14 +49,16 @@ void* heap_top(Heap* pq){
 
 void heap_push(Heap* pq, void* data, int priority){
    //Insertar al final del árbol/arreglo.
-   if (pq->heapArray[pq->size].data == NULL){
+   pq->size++;
+   int i = pq->size - 1;
+   if (pq->heapArray[i].data == NULL){
       enlarge(pq);
    }
-   pq->heapArray[pq->size].priority = priority;
-   pq->heapArray[pq->size].data = data;
+   pq->heapArray[i].priority = priority;
+   pq->heapArray[i].data = data;
 
    //Reordenar si es necesario.
-   int aux = pq->size;
+   int aux = i;
    int parent = (aux-1)/2;
    while (parent >= 0){
       //Comparar prioridad del nodo con el de su "Padre".
@@ -64,7 +66,7 @@ void heap_push(Heap* pq, void* data, int priority){
       swap(&(pq->heapArray[parent]), &(pq->heapArray[aux]));
       parent = (parent-1)/2;
    }
-   pq->size++;
+   
 }
 
 void heap_pop(Heap* pq){
