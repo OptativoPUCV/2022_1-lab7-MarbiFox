@@ -24,6 +24,10 @@ void swap(heapElem * parent, heapElem * node) {
    parent = aux;
 }
 
+void enlarge(Heap * heap){
+   heap->heapArray = (heapElem *) realloc (heap->heapArray, heap->capac * 2);
+}
+
 Heap* createHeap(){
    Heap * new = (Heap *) malloc (sizeof(Heap));
    new->heapArray = (heapElem *) malloc (3 * sizeof(heapElem));
@@ -41,7 +45,7 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
    //Insertar al final del árbol/arreglo.
    if (pq->heapArray[pq->size].data == NULL){
-      //enlarge(pq->heapArray);
+      enlarge(pq);
    }
    pq->heapArray[pq->size].priority = priority;
    pq->heapArray[pq->size].data = data;
