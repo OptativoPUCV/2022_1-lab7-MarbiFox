@@ -53,7 +53,7 @@ void heap_push(Heap* pq, void* data, int priority){
       //Comparar prioridad del nodo con el de su "Padre".
       if (pq->heapArray[parent].priority > pq->heapArray[aux].priority) break;
       swap(&(pq->heapArray[parent]), &(pq->heapArray[aux]));
-      parent = floor((parent-1)-2);
+      parent = floor((parent-1)/2);
    }
    pq->size++;
 }
