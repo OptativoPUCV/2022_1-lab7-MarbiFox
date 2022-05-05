@@ -239,3 +239,17 @@ Thu May  5 15:15:00 UTC 2022:
  tests:  4|2
 total_score: 30/70
 4589701
+Thu May  5 15:16:08 UTC 2022: 
+ heap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:4:0:
+heap.c: In function ‘heap_push’:
+heap.c:62:4: error: expected ‘;’ before ‘int’
+    int aux = i;
+    ^~~
+heap.c:66:58: error: ‘aux’ undeclared (first use in this function)
+       if (pq->heapArray[parent].priority > pq->heapArray[aux].priority) break;
+                                                          ^~~
+heap.c:66:58: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+195394b
