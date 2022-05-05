@@ -26,9 +26,9 @@ void swap(heapElem * parent, heapElem * node) {
 
 Heap* createHeap(){
    Heap * new = (Heap *) malloc (sizeof(Heap));
-   new->heapArray = (heapElem *) malloc (10 * sizeof(heapElem));
+   new->heapArray = (heapElem *) malloc (3 * sizeof(heapElem));
    new->size = 0;
-   new->capac = 10;
+   new->capac = 3;
    return new;
 }
 
