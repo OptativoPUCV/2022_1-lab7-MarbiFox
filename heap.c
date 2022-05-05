@@ -31,9 +31,9 @@ void enlarge(Heap * heap){
    heapElem * aux = heap->heapArray;
    heap->capac = heap->capac * 2 + 1;
    heap->heapArray = (heapElem *) realloc (heap->heapArray, (sizeof(heapElem) * heap->capac));
-   for (int i = 0; i < heap->size; i++) {
+   /*for (int i = 0; i < heap->size; i++) {
       heap->heapArray[i] = aux[i];
-   }
+   }*/
 }
 
 Heap* createHeap(){
