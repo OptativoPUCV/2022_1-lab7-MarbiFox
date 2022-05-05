@@ -17,14 +17,14 @@ typedef struct Heap{
 } Heap;
 
 
-void swap(heapElem * parent, heapElem * node) {
+void swap(heapElem parent, heapElem node) {
    heapElem aux;
-   aux.data = node->data;
-   aux.priority = node->priority;
-   node->data = parent->data;
-   node->priority = parent->priority;
-   parent->data = aux.data;
-   parent->priority = aux.priority;
+   aux.data = node.data;
+   aux.priority = node.priority;
+   node.data = parent.data;
+   node.priority = parent.priority;
+   parent.data = aux.data;
+   parent.priority = aux.priority;
 }
 
 void enlarge(Heap * heap){
@@ -61,7 +61,7 @@ void heap_push(Heap* pq, void* data, int priority){
    
    //Reordenar si es necesario.
    int parent = (i-1)/2;
-   while (1){
+   while (parent >= 0){
       //Comparar prioridad del nodo con el de su "Padre".
       printf("\n%d son\n", pq->heapArray[i].priority);
       printf("\n%d parent\n------------", pq->heapArray[parent].priority);
@@ -70,11 +70,11 @@ void heap_push(Heap* pq, void* data, int priority){
         break;
       }
       
-      swap(&(pq->heapArray[parent]), &(pq->heapArray[i]));
+      swap(pq->heapArray[parent], pq->heapArray[i]);
      
       printf("\n%d son\n", pq->heapArray[i].priority);
       printf("\n%d parent\n", pq->heapArray[parent].priority);
-     
+      i = parent;
       parent = (parent-1)/2;
    }
    pq->size++;

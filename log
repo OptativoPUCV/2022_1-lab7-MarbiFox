@@ -418,3 +418,22 @@ Thu May  5 15:48:06 UTC 2022:
  tests:  4|2
 total_score: 30/70
 d5b9530
+Thu May  5 15:55:34 UTC 2022: 
+ heap.c | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+In file included from test.c:4:0:
+heap.c: In function ‘heap_pop’:
+heap.c:85:9: error: incompatible type for argument 1 of ‘swap’
+    swap(&(pq->heapArray[0]), &(pq->heapArray[pq->size-1]));
+         ^
+heap.c:20:6: note: expected ‘heapElem {aka struct nodo}’ but argument is of type ‘heapElem * {aka struct nodo *}’
+ void swap(heapElem parent, heapElem node) {
+      ^~~~
+heap.c:85:30: error: incompatible type for argument 2 of ‘swap’
+    swap(&(pq->heapArray[0]), &(pq->heapArray[pq->size-1]));
+                              ^
+heap.c:20:6: note: expected ‘heapElem {aka struct nodo}’ but argument is of type ‘heapElem * {aka struct nodo *}’
+ void swap(heapElem parent, heapElem node) {
+      ^~~~
+Compilation failed
+3618df8
